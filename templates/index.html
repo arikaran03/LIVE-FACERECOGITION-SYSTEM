@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Face Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Face Verification</h1>
+
+        <div class="controls">
+            <h2>Image Upload</h2>
+            <form id="uploadForm">
+                <!-- <label for="targetImage">Select image:</label> -->
+                <input type="file" id="targetImage" name="target_image" accept="image/png, image/jpeg" required>
+                <button type="submit" id="submitTargetBtn">Submit Target Image</button>
+            </form>
+            <div id="uploadStatus" class="status-message" style="display:none;"></div>
+        </div>
+
+        <div class="camera-section">
+            <h2>Verify Identity</h2>
+            <button id="verifyBtn" disabled>Verify</button>
+            <div id="cameraContainer">
+                <video id="videoElement" autoplay playsinline muted></video> <div id="verificationStatus" class="status-message" style="display:none;"></div>
+            </div>    
+        </div>
+        
+        <div class="results">
+            <h2>Verification Result</h2>
+            <p>Verification is pending</p>
+            <div id="finalResult" class="status-message" style="display:none;"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
