@@ -1,0 +1,11 @@
+numpy
+cmake
+tf-keras
+flask
+Flask-SocketIO
+python-socketio
+eventlet
+opencv-python
+face_recognition
+deepface
+# for dlib installation use this github link https://github.com/Cfuhfsgh/Dlib-library-Installation
